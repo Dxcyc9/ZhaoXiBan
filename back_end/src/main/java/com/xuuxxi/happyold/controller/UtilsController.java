@@ -7,6 +7,7 @@ import com.xuuxxi.happyold.utils.PosUtil;
 import com.xuuxxi.happyold.utils.WeatherInfo;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;

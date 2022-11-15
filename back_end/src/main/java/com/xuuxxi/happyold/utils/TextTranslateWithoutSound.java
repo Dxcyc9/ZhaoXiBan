@@ -2,13 +2,17 @@ package com.xuuxxi.happyold.utils;
 
 import com.iflytek.cloud.speech.*;
 
+import java.io.File;
+
 /**
  * @Author: Xuuxxi
  * @Date: 2022/10/23
  */
 public class TextTranslateWithoutSound {
+    //41212f90
+    private static String appId = "0fd5c848";
     public static void getRes(String role, String text) {
-        SpeechUtility.createUtility( SpeechConstant.APPID +"=0fd5c848 ");
+        SpeechUtility.createUtility( SpeechConstant.APPID +"=" + appId + " ");
         SpeechSynthesizer speechSynthesizer = SpeechSynthesizer
                 .createSynthesizer();
         // 设置发音人
@@ -17,10 +21,15 @@ public class TextTranslateWithoutSound {
         //启用合成音频流事件，不需要时，不用设置此参数
         speechSynthesizer.setParameter( SpeechConstant.TTS_BUFFER_EVENT, "1" );
         // 设置合成音频保存位置（可自定义保存位置），默认不保存
-        speechSynthesizer.synthesizeToUri(text, "./translate_file.pcm",
+//        speechSynthesizer.synthesizeToUri(text, "./src/main/resources/templates/translate_file.pcm",
+//                synthesizeToUriListener);
+
+        speechSynthesizer.synthesizeToUri(text, System.getProperties().getProperty("user.home") +  File.separator + "translate_file.pcm",
                 synthesizeToUriListener);
 
-        speechSynthesizer.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./translate_file.pcm");
+//        speechSynthesizer.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./src/main/resources/templates/translate_file.pcm");
+
+        speechSynthesizer.setParameter(SpeechConstant.TTS_AUDIO_PATH, System.getProperties().getProperty("user.home") +  File.separator + "translate_file.pcm");
     }
 
     /**

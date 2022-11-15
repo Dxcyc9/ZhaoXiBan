@@ -25,7 +25,7 @@ public class PcmRunner {
         // TODO Auto-generated method stub
 
         try {
-            File file = new File("translate_file.pcm");
+            File file = new File("src/main/resources/templates/translate_file.pcm");
             System.out.println(file.length());
             int offset = 0;
             int bufferSize = Integer.valueOf(String.valueOf(file.length())) ;

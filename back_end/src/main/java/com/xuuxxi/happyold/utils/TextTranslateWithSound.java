@@ -8,6 +8,7 @@ import com.iflytek.cloud.speech.*;
  */
 
 public class TextTranslateWithSound {
+    private static String appId = "0fd5c848";
     //1.创建SpeechSynthesizer对象
     static SpeechSynthesizer mTts= SpeechSynthesizer.createSynthesizer();
     //2.合成参数设置，详见《MSC Reference Manual》SpeechSynthesizer 类
@@ -32,7 +33,7 @@ public class TextTranslateWithSound {
     };
 
     public static void getRes(String role, String text) {
-        SpeechUtility.createUtility( SpeechConstant.APPID +"=0fd5c848 ");
+        SpeechUtility.createUtility( SpeechConstant.APPID + "=" + appId);
         mTts.setParameter(SpeechConstant.VOICE_NAME, role);//设置发音人
         mTts.setParameter(SpeechConstant.SPEED, "50");//设置语速
         mTts.setParameter(SpeechConstant.VOLUME, "80");//设置音量，范围0~100
