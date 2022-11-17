@@ -1,5 +1,6 @@
 package com.xuuxxi.happyold.utils;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -11,10 +12,9 @@ public class WeatherInfo {
 
     private static final String baseApiUrl = "https://restapi.amap.com/v3/weather/weatherInfo";
 
-    public static String getWeatherInfo(String pos){
+    public static JSONObject getWeatherInfo(String pos){
         String url = "https://restapi.amap.com/v3/weather/weatherInfo?key=ca3a7fc40ba0bd55870cdba66e293c4e&city=" + pos + "&extensions=all";
-        String json = restTemplate.getForObject(url, String.class);
 
-        return json;
+        return restTemplate.getForObject(url, JSONObject.class);
     }
 }

@@ -1,5 +1,6 @@
 package com.xuuxxi.happyold.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.xuuxxi.happyold.common.R;
 import com.xuuxxi.happyold.utils.BusInfo;
 import com.xuuxxi.happyold.utils.LunarUtil;
@@ -20,7 +21,7 @@ import java.util.Map;
 @RequestMapping("/utils")
 public class UtilsController {
     @GetMapping("/weather/{pos}")
-    public R<String> getWeatherInfo(@PathVariable String pos){
+    public R<JSONObject> getWeatherInfo(@PathVariable String pos){
         return R.success(WeatherInfo.getWeatherInfo(pos));
     }
 
@@ -39,8 +40,7 @@ public class UtilsController {
     }
 
     @PostMapping("/busInfo")
-    public R<String> getBusInfo(@RequestParam String origin, @RequestParam String destination, @RequestParam String city){
-        String res = BusInfo.getBusInfo(origin, destination, city);
-        return R.success(res);
+    public R<JSONObject> getBusInfo(@RequestParam String origin, @RequestParam String destination, @RequestParam String city){
+        return R.success(BusInfo.getBusInfo(origin, destination, city));
     }
 }

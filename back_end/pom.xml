@@ -18,6 +18,12 @@
 	</properties>
 
 	<dependencies>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework</groupId>-->
+<!--			<artifactId>spring-test</artifactId>-->
+<!--			<version>RELEASE</version>-->
+<!--		</dependency>-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -136,12 +142,36 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>beautyeye</groupId> <!-- groupId随便起 -->
 			<artifactId>beautyeye</artifactId> <!-- artifactId随便起 -->
 			<version>1.0</version> <!-- version随便起 -->
 			<scope>system</scope>
 			<!-- systemPath是这个外部依赖的文件路径，我这里填的是绝对路径，你要是想填相对路径也ok -->
 			<systemPath>E:\FakeDesk\RuanGo\HappyOld\lib\Msc.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>beautyeye1</groupId> <!-- groupId随便起 -->
+			<artifactId>beautyeye1</artifactId> <!-- artifactId随便起 -->
+			<version>1.0</version> <!-- version随便起 -->
+			<scope>system</scope>
+			<!-- systemPath是这个外部依赖的文件路径，我这里填的是绝对路径，你要是想填相对路径也ok -->
+			<systemPath>E:\FakeDesk\RuanGo\HappyOld\lib\json.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>beautyeye2</groupId> <!-- groupId随便起 -->
+			<artifactId>beautyeye2</artifactId> <!-- artifactId随便起 -->
+			<version>1.0</version> <!-- version随便起 -->
+			<scope>system</scope>
+			<!-- systemPath是这个外部依赖的文件路径，我这里填的是绝对路径，你要是想填相对路径也ok -->
+			<systemPath>E:\FakeDesk\RuanGo\HappyOld\lib\json-jena-1.0.jar</systemPath>
 		</dependency>
 	</dependencies>
 
@@ -160,6 +190,16 @@
 				</configuration>
 			</plugin>
 
+<!--			<plugin>-->
+<!--				<artifactId>maven-compiler-plugin</artifactId>-->
+<!--				<configuration>-->
+<!--					<source>1.8</source>-->
+<!--					<target>1.8</target>-->
+<!--					<compilerArguments>-->
+<!--						<extdirs>WebRoot\WEB-INF\lib</extdirs>-->
+<!--					</compilerArguments>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 		</plugins>
 	</build>
 

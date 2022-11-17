@@ -2,8 +2,6 @@ package com.xuuxxi.happyold.utils;
 
 import com.iflytek.cloud.speech.*;
 
-import java.io.File;
-
 /**
  * @Author: Xuuxxi
  * @Date: 2022/10/23
@@ -24,12 +22,12 @@ public class TextTranslateWithoutSound {
 //        speechSynthesizer.synthesizeToUri(text, "./src/main/resources/templates/translate_file.pcm",
 //                synthesizeToUriListener);
 
-        speechSynthesizer.synthesizeToUri(text, System.getProperties().getProperty("user.home") +  File.separator + "translate_file.pcm",
+        speechSynthesizer.synthesizeToUri(text, "/home/xuuxxi/translate_file.pcm",
                 synthesizeToUriListener);
 
 //        speechSynthesizer.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./src/main/resources/templates/translate_file.pcm");
 
-        speechSynthesizer.setParameter(SpeechConstant.TTS_AUDIO_PATH, System.getProperties().getProperty("user.home") +  File.separator + "translate_file.pcm");
+        speechSynthesizer.setParameter(SpeechConstant.TTS_AUDIO_PATH, "/home/xuuxxi/translate_file.pcm");
     }
 
     /**
