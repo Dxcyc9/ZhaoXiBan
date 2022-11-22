@@ -2,16 +2,9 @@ package com.xuuxxi.happyold.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.xuuxxi.happyold.common.R;
-import com.xuuxxi.happyold.utils.BusInfo;
-import com.xuuxxi.happyold.utils.LunarUtil;
-import com.xuuxxi.happyold.utils.PosUtil;
-import com.xuuxxi.happyold.utils.WeatherInfo;
+import com.xuuxxi.happyold.utils.*;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.File;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @Author: Xuuxxi
@@ -40,7 +33,22 @@ public class UtilsController {
     }
 
     @PostMapping("/busInfo")
-    public R<JSONObject> getBusInfo(@RequestParam String origin, @RequestParam String destination, @RequestParam String city){
+    public R<JSONObject> getBusOldInfo(@RequestParam String origin, @RequestParam String destination, @RequestParam String city){
         return R.success(BusInfo.getBusInfo(origin, destination, city));
+    }
+
+    @PostMapping("/getAnsInfo")
+    public R<JSONObject> getAnsInfo(@RequestParam String city, @RequestParam String origin, @RequestParam String destination){
+        return R.success(BusInfoV2.getAnsInfo(city, origin, destination));
+    }
+
+    @PostMapping("/getBusInfo")
+    public R<JSONObject> getBusInfo(@RequestParam String city, @RequestParam String keywords){
+        return R.success(BusInfoV2.getBusInfo(city, keywords));
+    }
+
+    @PostMapping("/getBusPos")
+    public R<JSONObject> getBusPos(@RequestParam String city, @RequestParam String busLineId, @RequestParam String busLineNum, @RequestParam String busLineName){
+        return R.success(BusInfoV2.getBusPos(city, busLineId, busLineNum, busLineName));
     }
 }
