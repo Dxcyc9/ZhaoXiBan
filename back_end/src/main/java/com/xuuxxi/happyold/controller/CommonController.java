@@ -85,8 +85,8 @@ public class CommonController {
 
     @PostMapping("/soundDownload")
     public R<String> soundDownload(MultipartFile soundFile) throws IOException {
-        IatTool iatTool = new IatTool("0fd5c848");
-        //String basePath = "E:\\home\\xuuxxi\\sound_translate_file.pcm";
+        IatTool iatTool = new IatTool("0f559cb4");
+//        String basePath = "E:\\home\\xuuxxi\\sound_translate_file.pcm";
         String basePath = "/home/xuuxxi/sound_translate_file.pcm";
 
         try {
@@ -95,7 +95,7 @@ public class CommonController {
             return R.error(e.toString());
         }
 
-        //File file = new File("E:\\home\\xuuxxi\\sound_translate_file.pcm");
+//        File file = new File("E:\\home\\xuuxxi\\sound_translate_file.pcm");
         File file = new File("/home/xuuxxi/sound_translate_file.pcm");
         FileInputStream fileInputStream = new FileInputStream(file);
         MultipartFile multipartFile = new MultipartFileDto(file.getName(), file.getName(),

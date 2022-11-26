@@ -51,4 +51,9 @@ public class UtilsController {
     public R<JSONObject> getBusPos(@RequestParam String city, @RequestParam String busLineId, @RequestParam String busLineNum, @RequestParam String busLineName){
         return R.success(BusInfoV2.getBusPos(city, busLineId, busLineNum, busLineName));
     }
+
+    @PostMapping("/getPosList")
+    public R<JSONObject> getPosList(@RequestParam String keywords, @RequestParam String city){
+        return R.success(BusInfo.getPosInfo(keywords, city));
+    }
 }

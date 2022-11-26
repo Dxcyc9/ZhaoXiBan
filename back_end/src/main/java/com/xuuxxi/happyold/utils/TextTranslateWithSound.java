@@ -8,7 +8,7 @@ import com.iflytek.cloud.speech.*;
  */
 
 public class TextTranslateWithSound {
-    private static String appId = "0fd5c848";
+    private static String appId = "0f559cb4";
     //1.创建SpeechSynthesizer对象
     static SpeechSynthesizer mTts= SpeechSynthesizer.createSynthesizer();
     //2.合成参数设置，详见《MSC Reference Manual》SpeechSynthesizer 类

@@ -8,8 +8,9 @@ import com.iflytek.cloud.speech.*;
  */
 public class TextTranslateWithoutSound {
     //41212f90
-    private static String appId = "0fd5c848";
+    private static final String appId = "0f559cb4";
     public static void getRes(String role, String text) {
+        System.out.println(role + " : " + text);
         SpeechUtility.createUtility( SpeechConstant.APPID +"=" + appId + " ");
         SpeechSynthesizer speechSynthesizer = SpeechSynthesizer
                 .createSynthesizer();
