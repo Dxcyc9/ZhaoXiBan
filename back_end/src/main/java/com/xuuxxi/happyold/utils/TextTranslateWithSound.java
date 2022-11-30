@@ -32,15 +32,19 @@ public class TextTranslateWithSound {
         public void onSpeakResumed() {}
     };
 
-    public static void getRes(String role, String text) {
+    public static String getRes(String role, String text) {
+        String fileName = NameUtil.getNewName("translate_file.pcm");
+
         SpeechUtility.createUtility( SpeechConstant.APPID + "=" + appId);
         mTts.setParameter(SpeechConstant.VOICE_NAME, role);//设置发音人
         mTts.setParameter(SpeechConstant.SPEED, "50");//设置语速
         mTts.setParameter(SpeechConstant.VOLUME, "80");//设置音量，范围0~100
         //设置合成音频保存位置（可自定义保存位置），保存在“./tts_test.pcm”
         //如果不需要保存合成音频，注释该行代码
-        mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./translate_file.pcm");
+        mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH, "/home/xuuxxi/" + fileName);
         //3.开始合成
         mTts.startSpeaking(text, mSynListener);
+
+        return fileName;
     }
 }

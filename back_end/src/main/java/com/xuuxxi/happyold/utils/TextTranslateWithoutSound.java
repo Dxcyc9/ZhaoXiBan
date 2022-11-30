@@ -2,6 +2,8 @@ package com.xuuxxi.happyold.utils;
 
 import com.iflytek.cloud.speech.*;
 
+import java.util.UUID;
+
 /**
  * @Author: Xuuxxi
  * @Date: 2022/10/23
@@ -9,7 +11,9 @@ import com.iflytek.cloud.speech.*;
 public class TextTranslateWithoutSound {
     //41212f90
     private static final String appId = "0f559cb4";
-    public static void getRes(String role, String text) {
+    public static String getRes(String role, String text) {
+        String newName = NameUtil.getNewName("transFile.pcm");
+
         System.out.println(role + " : " + text);
         SpeechUtility.createUtility( SpeechConstant.APPID +"=" + appId + " ");
         SpeechSynthesizer speechSynthesizer = SpeechSynthesizer
@@ -23,12 +27,14 @@ public class TextTranslateWithoutSound {
 //        speechSynthesizer.synthesizeToUri(text, "./src/main/resources/templates/translate_file.pcm",
 //                synthesizeToUriListener);
 
-        speechSynthesizer.synthesizeToUri(text, "/home/xuuxxi/translate_file.pcm",
+        speechSynthesizer.synthesizeToUri(text, "/home/xuuxxi/transFile/" + newName,
                 synthesizeToUriListener);
 
 //        speechSynthesizer.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./src/main/resources/templates/translate_file.pcm");
 
-        speechSynthesizer.setParameter(SpeechConstant.TTS_AUDIO_PATH, "/home/xuuxxi/translate_file.pcm");
+        speechSynthesizer.setParameter(SpeechConstant.TTS_AUDIO_PATH, "/home/xuuxxi/transFile/" + newName);
+
+        return newName;
     }
 
     /**

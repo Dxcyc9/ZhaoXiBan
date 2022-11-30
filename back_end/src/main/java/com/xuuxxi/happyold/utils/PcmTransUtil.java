@@ -60,6 +60,7 @@ public class PcmTransUtil {
 
             return "ok";
         } catch (Exception e){
+            e.printStackTrace();
             return "nok";
         }
     }
